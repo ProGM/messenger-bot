@@ -242,6 +242,11 @@ class Bot extends EventEmitter {
         if (event.referral) {
           this._handleEvent('referral', event)
         }
+        
+        // handle referrals (e.g. m.me links)
+        if (event.game_play) {
+          this._handleEvent('game_play', event)
+        }
 
         // handle account_linking
         if (event.account_linking && event.account_linking.status) {
